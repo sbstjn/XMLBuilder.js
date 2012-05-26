@@ -1,0 +1,21 @@
+{
+  "author": "Sebastian Müller <code@semu.mp> (http://semu.mp)",
+  "name": "XMLBuilder.js",
+  "description": "Create XML files",
+  "version": "0.0.0",
+  "homepage": "https://github.com/semu/XMLBuilder.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/semu/XMLBuilder.js.git"
+  },
+  "engines": {
+    "node": ">= 0.6.10"
+  },
+  "dependencies": {
+    "amdefine": ">= 0.0.2"
+  },
+  "devDependencies": {
+    "nodeunit": ">= 0.7.4"
+  },
+  "optionalDependencies": {}
+}
