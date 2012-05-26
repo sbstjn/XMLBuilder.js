@@ -1,5 +1,5 @@
 /**
- * Node.js XMLBuilder
+ * XMLBuilder.js – Node.js XMLBuilder
  * Copyright (c) 2012 Sebastian Müller <code@semu.mp>, all rights reserved
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy 

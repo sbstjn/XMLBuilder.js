@@ -1,5 +1,5 @@
 /**
-* basics.js – Basic Node.js XMLBuilder Tests
+* index.js – Node.js XMLBuilder
 * Copyright (c) 2012 Sebastian Müller <code@semu.mp>, all rights reserved
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy 
@@ -21,16 +21,4 @@
 *
 */
 
-if (typeof define !== 'function') {
-  var define = require('amdefine')(module);
-}
-
-define(function(require) {
-  exports['simple'] = function (test) {
-      test.equal(4, 4);
-      test.done();
-  };
-  
-  return exports;
-});
-
+module.exports = require('./src/XMLBuilder.js');
