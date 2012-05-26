@@ -25,12 +25,51 @@ if (typeof define !== 'function') {
   var define = require('amdefine')(module);
 }
 
-define(function(require) {
-  exports['simple'] = function (test) {
-      test.equal(4, 4);
-      test.done();
+define(['../src/XMLBuilder.js'], function(XMLBuilder, require) {
+  exports['element structure'] = function (test) {
+    var xml = new XMLBuilder();
+    xml.root('lorem')
+      .element('ipsum')
+        .empty('dolor', {sit: 'amet'});
+    var xmlString = '<lorem><ipsum><dolor sit="amet" /></ipsum></lorem>'
+    
+    test.equal(xml.get(), xmlString);
+    test.done();
+  };
+  
+  exports['text in elements'] = function (test) {
+    var xml = new XMLBuilder();
+    xml.root('lorem')
+      .element('ipsum')
+        .element('dolor', {sit: 'amet'}, 'consectetur adipiscing elit');
+    var xmlString = '<lorem><ipsum><dolor sit="amet">consectetur adipiscing elit</dolor></ipsum></lorem>'
+    
+    test.equal(xml.get(), xmlString);
+    test.done();
+  };
+  
+  exports['multiple childs'] = function (test) {
+    var xml = new XMLBuilder();
+    xml.root('lorem');
+    xml.empty('ipsum');
+    xml.empty('dolor', {sit: 'amet'});
+    
+    var xmlString = '<lorem><ipsum /><dolor sit="amet" /></lorem>'
+    
+    test.equal(xml.get(), xmlString);
+    test.done();
+  };
+  
+  exports['invalid element'] = function (test) {
+    test.throws(function () {
+      var xml = new XMLBuilder();
+      xml.root('lorem');
+      xml.empty('ip sum');
+      xml.empty('dolor', {sit: 'amet'});
+    });
+    
+    test.done();
   };
   
   return exports;
 });
-
