@@ -3,6 +3,8 @@ XMLBuilder.js
 
 Create XML data with JavaScript, requires `RequireJS` for using and `nodeunit` for testing…
 
+[![Build Status](https://secure.travis-ci.org/semu/XMLBuilder.js.png?branch=master)](http://travis-ci.org/semu/XMLBuilder.js)
+
 Usage
 =====
 
