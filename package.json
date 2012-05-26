@@ -1,7 +1,7 @@
 {
   "author": "Sebastian Müller <code@semu.mp> (http://semu.mp)",
   "name": "XMLBuilder.js",
-  "description": "Create XML files",
+  "description": "Create XML data with JavaScript",
   "version": "0.0.0",
   "homepage": "https://github.com/semu/XMLBuilder.js",
   "repository": {
