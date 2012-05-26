@@ -1,7 +1,7 @@
 XMLBuilder.js
 =============
 
-Create XML files with Node.js
+Create XML data with JavaScript, requires `RequireJS` for using and `nodeunit` for testing…
 
 Usage
 =====
