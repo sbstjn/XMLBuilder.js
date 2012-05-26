@@ -50,9 +50,9 @@ define(['../src/XMLBuilder.js'], function(XMLBuilder, require) {
   
   exports['multiple childs'] = function (test) {
     var xml = new XMLBuilder();
-    xml.root('lorem');
-    xml.empty('ipsum');
-    xml.empty('dolor', {sit: 'amet'});
+    xml.root('lorem')
+      .empty('ipsum')
+      .empty('dolor', {sit: 'amet'});
     
     var xmlString = '<lorem><ipsum /><dolor sit="amet" /></lorem>'
     

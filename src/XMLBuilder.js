@@ -104,6 +104,7 @@ XMLBuilder.prototype.empty = function(name, attr) {
   }
   
   this.raw += ' />';
+  return this;
 };
 
 /**
