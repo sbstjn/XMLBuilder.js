@@ -3,15 +3,21 @@ XMLBuilder.js
 
 Create XML files with Node.js
 
-    var xml = new XMLBuilder();
-    xml.root('lorem')
-      .element('ipsum')
-        .element('dolor', {sit: 'amet'}, 'consectetur adipiscing elit');
+Usage
+=====
 
-    var xml = new XMLBuilder();
-    xml.root('lorem')
-      .empty('ipsum')
-      .empty('dolor', {sit: 'amet'});
+``` js
+var xml = new XMLBuilder();
+xml.root('lorem')
+  .element('ipsum')
+    .element('dolor', {sit: 'amet'}, 'consectetur adipiscing elit');
+console.log(xml.get());
+```
 
-    xml.get()
- 
+``` js
+var xml = new XMLBuilder();
+xml.root('lorem')
+  .empty('ipsum')
+  .empty('dolor', {sit: 'amet'});
+console.log(xml.get());
+```
