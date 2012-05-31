@@ -60,7 +60,7 @@ XMLBuilder.prototype.root = function(name) {
  * @return string
  */
 XMLBuilder.prototype.encodeAtrributeValue = function(value) {
-  return value;
+  return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 };
 
 /**
@@ -69,8 +69,8 @@ XMLBuilder.prototype.encodeAtrributeValue = function(value) {
  * @param string value
  * @return string
  */
-XMLBuilder.prototype.encodeElementValue = function(text) {
-  return text;
+XMLBuilder.prototype.encodeElementValue = function(value) {
+  return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 };
 
 /**
@@ -118,6 +118,11 @@ XMLBuilder.prototype.empty = function(name, attr) {
 XMLBuilder.prototype.element = function(name, attr, text) {
   this.raw += '<' + this.checkName(name);
   this.stack.push(name);
+  
+  if (!text && attr) {
+    text = attr;
+    attr = null;
+  }
   
   if (attr) {
     this.current.hasAttributes = true;
